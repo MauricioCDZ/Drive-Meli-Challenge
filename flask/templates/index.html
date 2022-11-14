@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class = item>
+            <ul>
+                Take a look at your Drive files!.
+            </ul>
+            <ul>
+                |ID DB| ID FILE | Nombre | Extension | Owner | Visibilidad | Ult modifi | Fue publico |
+            </ul>
+            <ul>
+                {% for file in files %}
+                    <li>File:   {{file}}</li>
+                {% endfor %}
+            </ul>
+
+            <ul>
+                Update your files! <a href='/updatefiles'><button>Update files</button></a>
+            </ul>
+        </div>
+    </body>
+</html>

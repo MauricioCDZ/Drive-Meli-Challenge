@@ -1,0 +1,27 @@
+services:
+
+  flaskapp:
+    build: ./flask/
+    command: sh -c " sleep 30 && python3 app.py"
+    depends_on:
+      - mysql
+
+    expose:
+      - 5000
+    ports:
+      - 5000:5000
+
+
+  
+  mysql:
+    build: ./mysql/
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+        - '3306:3306'
+
+  

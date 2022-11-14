@@ -1,0 +1,14 @@
+
+services:
+  
+  app:
+   
+    build: .
+    command: ["python3", "app.py"]
+
+    expose:
+      - 5000
+    ports:
+      - 5000:5000
+  
+   
